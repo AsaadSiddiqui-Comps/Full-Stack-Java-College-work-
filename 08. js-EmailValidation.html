@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js-EmailValidationForm</title>
+</head>
+<body>
+    <h1>Email Validation Form</h1>
+    <p>Enter your email address below and submit the form. The email will be validated using JavaScript.</p>
+    <form id="emailForm" onsubmit="return validateEmail()">
+  Email: <input type="text" id="email"><br>
+  <button type="submit">Submit</button>
+</form>
+<script>
+function validateEmail() {
+  const email = document.getElementById("email").value;
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address.");
+    return false;
+  }
+  alert("Email is valid!");
+  return true;
+}
+</script>
+</body>
+</html>

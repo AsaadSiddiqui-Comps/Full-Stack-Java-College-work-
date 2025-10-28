@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Changer</title>
+  <style>
+    /* 🎨 Basic page styling */
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.5s; /* smooth color fade */
+    }
+
+    h1 {
+      margin-top: 50px;
+    }
+
+    /* 🟦 Button styling */
+    button {
+      margin-top: 100px;
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #333;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎨 Click or wait 5 seconds to change the background color!</h1>
+  <button onclick="changeColor()">Change Color Now</button>
+
+  <script>
+    /* 
+      🌟 JavaScript Concepts Used:
+      1. Arrays → to store color options.
+      2. Functions → reusable blocks of code (changeColor).
+      3. Math.random() → to generate random color index.
+      4. DOM Manipulation → change background using JS.
+      5. setInterval() → to repeat an action every few seconds.
+    */
+
+    // 1️⃣ Create an array of color names
+    const colors = ["red", "green", "blue", "yellow", "orange", "purple", "pink", "cyan", "lime", "gold"];
+
+    // 2️⃣ Define a function to change background color
+    function changeColor() {
+      // Pick a random color from the array
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+      // Change the background color of the body
+      document.body.style.backgroundColor = randomColor;
+
+      // (Optional) Log the chosen color to console for learning
+      console.log("Background changed to:", randomColor);
+    }
+
+    // 3️⃣ Automatically change color every 5 seconds (5000 milliseconds)
+    setInterval(changeColor, 5000);
+  </script>
+
+</body>
+</html>

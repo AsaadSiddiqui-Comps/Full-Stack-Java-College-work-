@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>HTML Basics: Formatting, Table, List, Form, Link, Image, Background</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    /* Simple background and basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      margin: 20px;
+      /* background: gradient + fallback color */
+      background: linear-gradient(120deg, #f0f7ff, #fff8e7);
+      color: #222;
+    }
+    header { margin-bottom: 18px; }
+    .section { background: rgba(255,255,255,0.8); padding: 12px; border-radius: 8px; margin-bottom: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    img.example { max-width: 150px; display: block; margin: 8px 0; }
+    table { border-collapse: collapse; width: 100%; max-width: 600px; margin-top: 8px; }
+    table, th, td { border: 1px solid #bbb; }
+    th, td { padding: 8px; text-align: left; }
+    .small-note { font-size: 0.9rem; color: #555; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>HTML Basics — One Page Example</h1>
+    <p class="small-note">This page shows common HTML features for beginners.</p>
+  </header>
+
+  <!-- TEXT FORMATTING -->
+  <section class="section">
+    <h2>Text formatting tags</h2>
+    <p>Regular paragraph text with some inline formatting examples:</p>
+    <p>
+      <strong>Strong</strong> (makes text bold) —
+      <em>Emphasis</em> (usually italic) —
+      <b>Bold</b> —
+      <i>Italic</i> —
+      <u>Underline</u> —
+      <mark>Highlighted</mark> —
+      <small>Smaller text</small>.
+    </p>
+
+    <p>Superscript: x<sup>2</sup> and Subscript: H<sub>2</sub>O</p>
+    <p>Code example inline: <code>const x = 5;</code></p>
+
+    <blockquote>
+      This is a blockquote element — good for quoting text or showing a note.
+    </blockquote>
+  </section>
+
+  <!-- LISTS -->
+  <section class="section">
+    <h2>Lists</h2>
+    <p>Unordered list (bullets):</p>
+    <ul>
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Cherry</li>
+    </ul>
+
+    <p>Ordered list (numbers):</p>
+    <ol>
+      <li>Wake up</li>
+      <li>Make coffee</li>
+      <li>Code something fun</li>
+    </ol>
+  </section>
+
+  <!-- TABLE -->
+  <section class="section">
+    <h2>Table</h2>
+    <p>Simple table with headers:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Alice</td>
+          <td>Designer</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Bob</td>
+          <td>Developer</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Carol</td>
+          <td>Tester</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- IMAGE -->
+  <section class="section">
+    <h2>Image</h2>
+    <p>Below is an example image with alt text:</p>
+    <img class="example" src="https://images.all-free-download.com/images/graphiclarge/iphone_6_sample_photo_566464.jpg" alt="Placeholder example image">
+    <p class="small-note">Use <code>alt</code> to describe the image for accessibility.</p>
+  </section>
+
+  <!-- LINK -->
+  <section class="section">
+    <h2>Link</h2>
+    <p>
+      A link to an external site:
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">Learn HTML on MDN</a>
+    </p>
+    <p class="small-note">Use <code>target="_blank"</code> to open in a new tab and <code>rel="noopener noreferrer"</code> for security.</p>
+  </section>
+
+  <!-- FORM -->
+  <section class="section">
+    <h2>Form</h2>
+    <p>This form uses <code>method="get"</code> and an action of "#" (so it won't submit anywhere). Try filling it and clicking Submit.</p>
+
+    <form action="#" method="get">
+      <label>
+        Name:<br>
+        <input type="text" name="name" placeholder="Your name" required>
+      </label>
+      <br><br>
+
+      <label>
+        Email:<br>
+        <input type="email" name="email" placeholder="you@example.com" required>
+      </label>
+      <br><br>
+
+      <label>
+        Choose a role:<br>
+        <select name="role">
+          <option value="student">Student</option>
+          <option value="developer" selected>Developer</option>
+          <option value="designer">Designer</option>
+        </select>
+      </label>
+      <br><br>
+
+      <fieldset>
+        <legend>Experience level</legend>
+        <label><input type="radio" name="level" value="beginner" checked> Beginner</label><br>
+        <label><input type="radio" name="level" value="intermediate"> Intermediate</label><br>
+        <label><input type="radio" name="level" value="advanced"> Advanced</label>
+      </fieldset>
+      <br>
+
+      <label><input type="checkbox" name="subscribe" value="yes"> Subscribe to newsletter</label>
+      <br><br>
+
+      <label>
+        Message:<br>
+        <textarea name="message" rows="4" cols="40" placeholder="Write a short message..."></textarea>
+      </label>
+      <br><br>
+
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+  </section>
+
+  <!-- BACKGROUND NOTE -->
+  <section class="section">
+    <h2>Background</h2>
+    <p>
+      The page background is controlled by CSS in the <code>&lt;style&gt;</code> section at the top:
+      <code>background: linear-gradient(120deg, #f0f7ff, #fff8e7);</code>
+      You can change that to a solid color like <code>background: #f4f4f4;</code> or use an image:
+      <code>background-image: url('your-image.jpg');</code>
+    </p>
+  </section>
+
+  <footer class="small-note">
+    <p>That's it — a compact beginner page showing many HTML basics. Ask if you'd like a version that saves form data, validates inputs, or demonstrates more tags.</p>
+  </footer>
+
+</body>
+</html>

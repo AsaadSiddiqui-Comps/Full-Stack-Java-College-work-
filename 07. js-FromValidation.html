@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-FromValidation</title>
+</head>
+<body>
+    <form id="myForm" onsubmit="return validateForm()">
+  Name: <input type="text" id="name"><br>
+  Email: <input type="email" id="email"><br>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+function validateForm() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+
+  if (name === "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  if (email === "") {
+    alert("Email must be filled out");
+    return false;
+  }
+  alert("Your Details Submitted Successfully!");
+  return true;
+}
+</script>
+</body>
+</html>
